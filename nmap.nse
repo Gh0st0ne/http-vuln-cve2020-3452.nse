@@ -87,7 +87,7 @@ action = function(host,port)
   if response.status == 200 then
     if string.match(response.body, match) then
       stdnse.print_debug("%s: %s GET %s - 200 OK", SCRIPT_NAME,host.targetname or host.ip, path)
-      vuln.state a= vulns.STATE.VULN
+      vuln.state = vulns.STATE.VULN
       CASA = (("Verify arbitrary file read: https://%s:%d%s"):format(host.targetname or host.ip,port.number, path))
 		
       if outputFile then
